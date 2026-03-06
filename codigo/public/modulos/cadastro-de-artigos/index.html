@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Artigos | SafeKids</title>
+  <link rel="stylesheet" href="../cadastro-de-artigos/css/style.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <img src="../apresentacao-de-artigos/imgs/logo.png" alt="Logo do site" class="logo" onclick="window.location.href='../index.html'">
+    <section class="menudenavegacao">
+      <nav>
+        <ul>
+          <li><a href="#">SOBRE</a></li>
+          <li><a href="#">PSICÓLOGOS</a></li>
+          <li><a href="../index.html">ARTIGOS E GUIAS</a></li>
+          <li><a href="index.html" class="ativo">CADASTRO</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h1 id="form-titulo">Novo Artigo</h1>
+
+      <form id="form-artigo">
+        
+        <label for="titulo">Título do Artigo</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Ex: Papel dos Pais na Prevenção Digital" required>
+        
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" name="autor" placeholder="Ex: Rafael Duarte (Editor)" required>
+        
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione a Categoria</option>
+          <option value="Prevenção">Prevenção</option>
+          <option value="Parentalidade">Parentalidade</option>
+          <option value="Tecnologia">Tecnologia</option>
+        </select>
+        
+        <label for="resumo">Resumo/Chamada</label>
+        <textarea id="resumo" name="resumo" rows="3" placeholder="Insira uma breve descrição/preview para a listagem." required></textarea>
+        
+        <label for="conteudo">Conteúdo Principal</label>
+        <textarea id="conteudo" name="conteudo" rows="10" placeholder="Edição completa do corpo do texto do artigo, suportando formatação." required></textarea>
+        
+        <label for="imagem_url">URL da Imagem de Destaque</label>
+        <input type="text" id="imagem_url" name="imagem_url" placeholder="URL da imagem de capa (ex: /assets/images/artigo-proteger-filho.jpg)">
+        
+        <label for="data_publicacao">Data de Publicação</label>
+        <input type="date" id="data_publicacao" name="data_publicacao">
+
+        <div class="form-actions">
+          <button type="button" id="btn-delete" class="btn-delete" style="display:none;">Excluir Artigo</button>
+          <button type="button" id="btn-rascunho" class="btn-draft">Salvar Rascunho</button>
+          <button type="button" id="btn-publicar" class="btn-publish">Publicar Artigo</button>
+        </div>
+      </form>
+      <p id="mensagem-status" style="margin-top: 20px; text-align: center; color: green;"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>©2025 - Safe Kids</p>
+  </footer>
+  <script src="../cadastro-de-artigos/app-cadastro-artigos,js"></script> 
+</body>
+
+</html>

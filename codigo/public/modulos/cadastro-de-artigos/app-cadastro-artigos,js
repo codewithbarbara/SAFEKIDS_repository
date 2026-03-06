@@ -1,0 +1,226 @@
+(() => {
+  'use strict';
+
+  const parametrosUrl = new URLSearchParams(location.search);
+  const idRaw = parametrosUrl.get('id');
+
+  let artigoId = null;
+  if (idRaw !== null) {
+    artigoId = /^\d+$/.test(idRaw) ? Number(idRaw) : idRaw;
+  }
+
+  const formulario = document.getElementById('form-artigo');
+  const tituloFormulario = document.getElementById('form-titulo');
+  const botaoExcluir = document.getElementById('btn-delete');
+  const botaoRascunho = document.getElementById('btn-rascunho');
+  const botaoPublicar = document.getElementById('btn-publicar');
+  const elementoStatus = document.getElementById('mensagem-status');
+
+  function mostrarStatus(mensagem, erro = false) {
+    if (!elementoStatus) {
+      console[erro ? 'error' : 'log'](mensagem);
+      return;
+    }
+    elementoStatus.textContent = mensagem;
+    elementoStatus.style.color = erro ? 'red' : 'green';
+  }
+
+  function travarBotoes(estado = true) {
+    [botaoRascunho, botaoPublicar, botaoExcluir].forEach(b => {
+      if (b) b.disabled = estado;
+    });
+  }
+
+  async function buscarJson(url, opcoes = {}) {
+    const resp = await fetch(url, opcoes);
+    if (!resp.ok) {
+      const texto = await resp.text().catch(() => '');
+      const erro = new Error(`HTTP ${resp.status} - ${resp.statusText}`);
+      erro.status = resp.status;
+      erro.body = texto;
+      throw erro;
+    }
+    const ct = resp.headers.get('content-type') || '';
+    if (ct.includes('application/json')) return resp.json();
+    return resp.text();
+  }
+
+  async function carregarArtigo(id) {
+    if (!id) return;
+    if (tituloFormulario) tituloFormulario.textContent = 'Editar Artigo';
+    if (botaoExcluir) botaoExcluir.style.display = 'inline-block';
+
+    try {
+      const artigo = await buscarJson(`/artigos/${encodeURIComponent(id)}`);
+
+      const setSeExistir = (seletor, valor) => {
+        const el = document.getElementById(seletor);
+        if (el) el.value = valor ?? '';
+      };
+
+      setSeExistir('titulo', artigo.titulo);
+      setSeExistir('autor', artigo.autor);
+      setSeExistir('categoria', artigo.categoria);
+      setSeExistir('resumo', artigo.resumo);
+      setSeExistir('conteudo', artigo.conteudo);
+      setSeExistir('imagem_url', artigo.imagemcapa || artigo.imagem);
+      setSeExistir('data_publicacao', artigo.datapublicacao || artigo.dataPublicacao);
+
+      mostrarStatus(`Status atual: ${artigo.status ? String(artigo.status).toUpperCase() : 'PUBLICADO'}`);
+    } catch (err) {
+      console.error('Erro ao carregar artigo para edição:', err);
+      mostrarStatus('ERRO: Não foi possível carregar o artigo para edição.', true);
+      setTimeout(() => { location.href = '../index.html'; }, 1800);
+    }
+  }
+
+  function calcularProximoId(listaArtigos) {
+    if (!Array.isArray(listaArtigos) || listaArtigos.length === 0) return 1;
+    const idsNumericos = listaArtigos
+      .map(a => {
+        if (typeof a.id === 'number' && Number.isFinite(a.id)) return a.id;
+        if (typeof a.id === 'string' && /^\d+$/.test(a.id)) return Number(a.id);
+        return null;
+      })
+      .filter(x => x !== null && x !== undefined);
+    if (idsNumericos.length === 0) return 1;
+    return Math.max(...idsNumericos) + 1;
+  }
+
+  function detectarFormatoId(listaArtigos) {
+    let contNum = 0, contStr = 0;
+    (listaArtigos || []).forEach(a => {
+      if (typeof a.id === 'number') contNum++;
+      else if (typeof a.id === 'string' && /^\d+$/.test(a.id)) contStr++;
+    });
+    if (contNum >= contStr && contNum > 0) return 'number';
+    if (contStr > contNum) return 'string';
+    return null;
+  }
+
+  function coletarDadosDoFormulario() {
+    const pegar = id => {
+      const el = document.getElementById(id);
+      return el ? String(el.value || '').trim() : '';
+    };
+    const dataPub = pegar('data_publicacao') || new Date().toISOString().split('T')[0];
+
+    return {
+      titulo: pegar('titulo'),
+      autor: pegar('autor'),
+      categoria: pegar('categoria'),
+      resumo: pegar('resumo'),
+      conteudo: pegar('conteudo'),
+      imagemcapa: pegar('imagem_url'),
+      datapublicacao: dataPub
+    };
+  }
+
+  async function salvarArtigo(status) {
+    if (!formulario) { alert('Formulário não encontrado nesta página.'); return; }
+    if (!formulario.checkValidity()) { formulario.reportValidity(); mostrarStatus('Preencha os campos obrigatórios.', true); return; }
+
+    const dados = coletarDadosDoFormulario();
+    dados.status = status;
+
+    travarBotoes(true);
+    mostrarStatus('Enviando...');
+
+    try {
+      if (artigoId) {
+        const url = `/artigos/${encodeURIComponent(String(artigoId))}`;
+        const resposta = await fetch(url, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dados)
+        });
+        if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+        const retorno = await resposta.json();
+        const idRetornado = retorno.id ?? artigoId;
+        mostrarStatus('Artigo atualizado com sucesso!');
+        const irVer = confirm('Artigo salvo. Deseja ver o artigo agora? Clique "OK" para ver, "Cancelar" para continuar editando.');
+        if (irVer) {
+          location.href = `modulos/apresentacao-de-artigos/artigo.html?id=${encodeURIComponent(String(idRetornado))}`;
+          return;
+        }
+        await carregarArtigo(idRetornado);
+        travarBotoes(false);
+        return;
+      }
+
+      let formato = null;
+      let idCalculado = null;
+      try {
+        const listaResp = await fetch('/artigos');
+        if (listaResp.ok) {
+          const lista = await listaResp.json();
+          formato = detectarFormatoId(lista);
+          const proximo = calcularProximoId(lista);
+          idCalculado = proximo;
+          if (formato === 'number') dados.id = proximo;
+          else if (formato === 'string') dados.id = String(proximo);
+        }
+      } catch (_) {
+      }
+
+      const postResp = await fetch('/artigos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
+      if (!postResp.ok) throw new Error('HTTP ' + postResp.status);
+      const criado = await postResp.json();
+      const idCriado = criado.id ?? (dados.id ?? idCalculado);
+      mostrarStatus('Artigo criado com sucesso!');
+
+      const irVerDepois = confirm('Artigo criado. Deseja ver o artigo agora? OK = ver, Cancelar = continuar na página.');
+      if (irVerDepois) {
+        location.href = `modulos/apresentacao-de-artigos/artigo.html?id=${encodeURIComponent(String(idCriado))}`;
+        return;
+      }
+      artigoId = idCriado;
+      await carregarArtigo(artigoId);
+      travarBotoes(false);
+
+    } catch (err) {
+      console.error('Erro ao salvar artigo:', err);
+      const detalhe = err && err.body ? `: ${err.body}` : '';
+      mostrarStatus('ERRO: Não foi possível salvar. Verifique o servidor' + detalhe, true);
+      travarBotoes(false);
+    }
+  }
+
+  async function excluirArtigo() {
+    if (!artigoId) return;
+    const confirmado = confirm('Tem certeza que deseja excluir este artigo? A ação é irreversível.');
+    if (!confirmado) return;
+
+    travarBotoes(true);
+    mostrarStatus('Excluindo...');
+
+    try {
+      const resp = await fetch(`/artigos/${encodeURIComponent(String(artigoId))}`, { method: 'DELETE' });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      mostrarStatus('Artigo excluído. Redirecionando...');
+      setTimeout(() => { location.href = '../apresentacao-de-artigos/index.html'; }, 900);
+    } catch (err) {
+      console.error('Erro ao excluir artigo:', err);
+      mostrarStatus('ERRO: Não foi possível excluir o artigo.', true);
+      travarBotoes(false);
+    }
+  }
+
+  if (botaoRascunho) botaoRascunho.addEventListener('click', e => { e.preventDefault(); salvarArtigo('rascunho'); });
+  if (botaoPublicar) botaoPublicar.addEventListener('click', e => { e.preventDefault(); salvarArtigo('publicado'); });
+  if (botaoExcluir) botaoExcluir.addEventListener('click', e => { e.preventDefault(); excluirArtigo(); });
+
+  if (artigoId) carregarArtigo(artigoId);
+
+  window.__safeKidsAdmin = {
+    calcularProximoId,
+    detectarFormatoId,
+    coletarDadosDoFormulario,
+    artigoId
+  };
+
+})();

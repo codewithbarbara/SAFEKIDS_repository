@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - SafeKids</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <header class="login-header">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../assets/images/logo.png" alt="SafeKids Logo" class="logo-img">
+            </a>
+        </header>
+
+        <main class="login-card">
+            <div class="card-header">
+                <h2>Criar Nova Conta</h2>
+                <p>Preencha os dados para se cadastrar</p>
+            </div>
+
+            <form id="cadastro-form" class="login-form">
+                <div class="form-group">
+                    <label for="txt_nome">Nome Completo</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="txt_nome" placeholder="Seu nome completo" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_login">Usuário (Login)</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-at"></i>
+                        <input type="text" id="txt_login" placeholder="Escolha um nome de usuário" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_email">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="txt_email" placeholder="seu@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_senha">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="txt_senha" placeholder="Sua senha" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_senha2">Confirmar Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="txt_senha2" placeholder="Confirme sua senha" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="btn_salvar" class="btn-login">Cadastrar</button>
+            </form>
+
+            <div class="card-footer">
+                <p>Já tem uma conta? <a href="login.html" class="link-cadastro">Faça Login</a></p>
+            </div>
+        </main>
+    </div>
+
+  <script>
+    const API_URL = '/usuarios';
+
+    function addUser (nome, login, senha, email) {
+        let usuario = { "login": login, "senha": senha, "nome": nome, "email": email };
+
+        fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(usuario),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Usuário registrado com sucesso! Proceda com o login para entrar.');
+            window.location.href = 'login.html';
+        })
+        .catch(error => {
+            console.error('Erro ao inserir usuário via API JSONServer:', error);
+            alert("Erro ao inserir usuário");
+        });
+    }
+
+    function salvaLogin(event) {
+      event.preventDefault();
+
+      let login = document.getElementById('txt_login').value;
+      let nome = document.getElementById('txt_nome').value;
+      let email = document.getElementById('txt_email').value;
+      let senha = document.getElementById('txt_senha').value;
+      let senha2 = document.getElementById('txt_senha2').value;
+
+      if (senha != senha2) {
+        alert('As senhas informadas não conferem.');
+        return;
+      }
+
+      addUser(nome, login, senha, email);
+    }
+
+    document.getElementById('cadastro-form').addEventListener('submit', salvaLogin);
+  </script>
+</body>
+
+</html>

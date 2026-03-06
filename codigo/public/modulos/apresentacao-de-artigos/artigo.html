@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitura do Artigo | SafeKids</title>
+  <link rel="stylesheet" href="css/style-artigo.css?v=5">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo.png" alt="Logo SafeKids">
+        </a>
+      </div>
+
+      <div id="header-user-area" class="header-user-area">
+      </div>
+    </div>
+
+    <div class="menudenavegacao">
+      <nav>
+        <ul>
+          <li><a href="../about/about.html">Sobre</a></li>
+          <li><a href="../view-all-psicologos/index.html">Psicólogos</a></li>
+          <li><a href="../apresentacao-de-artigos/index.html" class="ativo">Artigos</a></li>
+          <li><a href="../forum-conversa/forum.html">Fórum</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-artigo"></main>
+
+  <footer>
+    <p>©2025 - Safe Kids</p>
+  </footer>
+
+  <div class="modal-overlay" id="modalLoginRequired">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="mb-3">
+          <i class="fas fa-user-lock modal-icon"></i>
+        </div>
+        <h4 class="modal-title">Login Necessário</h4>
+        <p class="modal-text">
+          Para realizar esta ação, você precisa estar logado em sua conta.
+          É rapidinho e gratuito!
+        </p>
+        <div class="modal-actions">
+          <button type="button" class="btn-modal-cancel" id="btnFecharModal">Cancelar</button>
+          <a href="../../if-login.html" class="btn-modal-login">Fazer Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/app-artigo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeKids - Cadastro de Psicólogos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="management-container">
+        <header class="management-header" style="justify-content: center;">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../assets/images/logo.png" alt="SafeKids Logo" class="logo-img">
+            </a>
+        </header>
+
+        <main class="management-content">
+            <div class="page-header">
+                <h1>Cadastro de Psicólogos</h1>
+                <p>Preencha os dados abaixo para se cadastrar na plataforma.</p>
+            </div>
+
+            <form id="formCadastro" class="login-form form-grid">
+                <input type="hidden" id="id">
+
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="nome" placeholder="Nome completo" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="crp">CRP</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-id-card"></i>
+                        <input type="text" id="crp" placeholder="00/00000" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" placeholder="email@exemplo.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="senha" minlength="6" placeholder="Mínimo 6 caracteres" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="cidade" placeholder="Digite a cidade" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="valorConsulta">Valor da Consulta (R$)</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input type="number" id="valorConsulta" min="0" step="0.01" placeholder="150.00" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoAtendimento">Tipo de Atendimento</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-video"></i>
+                        <select id="tipoAtendimento" required>
+                            <option value="Online">Online</option>
+                            <option value="Presencial">Presencial</option>
+                            <option value="Ambos">Ambos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="justify-content: center;">
+                    <div class="input-wrapper" style="gap: 8px;">
+                        <input type="checkbox" id="aceitaConvenios" style="width: auto; margin: 0;">
+                        <label for="aceitaConvenios" style="margin: 0; cursor: pointer;">Aceito Convênios</label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="formacao">Formação</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <input type="text" id="formacao" placeholder="Ex: Graduação em Psicologia, Mestrado em TCC">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="especialidades">Especialidades</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-brain"></i>
+                        <input type="text" id="especialidades"
+                            placeholder="Ex: Ansiedade, Terapia Infantil, Orientação Familiar">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="bio">Biografia</label>
+                    <div class="input-wrapper">
+                        <textarea id="bio" placeholder="Conte um pouco sobre você..." required
+                            style="width: 100%; padding: 12px; font-family: 'Lexend'; border: 2px solid #e2e8f0; border-radius: 8px; min-height: 100px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="foto">Foto (URL)</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-image"></i>
+                        <input type="url" id="foto" placeholder="https://..." required>
+                    </div>
+                </div>
+
+                <button type="submit" id="btnSalvar" class="btn-login full-width">Salvar Psicólogo</button>
+            </form>
+
+            <div class="lista" id="adminListContainer" style="display: none;">
+                <h2>Usuários Cadastrados (Admin)</h2>
+                <div id="listaUsuarios">
+                    <p style="text-align: center; color: var(--text-muted);">Carregando usuários...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "lab-jsonserver",
+  "version": "1.0.0",
+  "description": "Aplicação Web com backend baseado no JSON Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

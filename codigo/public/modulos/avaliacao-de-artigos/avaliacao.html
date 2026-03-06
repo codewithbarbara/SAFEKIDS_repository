@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Qualidade | SafeKids</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header>
+        <img src="../apresentacao-de-artigos/imgs/logo.png" alt="Logo SafeKids" class="logo" onclick="window.location.href='../index.html'">
+        <section class="menudenavegacao">
+            <nav>
+                <ul>
+                    <li><a href="../">SOBRE</a></li>
+                    <li><a href="../">PSICÓLOGOS</a></li>
+                    <li><a href="../">ARTIGOS E GUIAS</a></li>
+                    <li><a href="../avaliacao-de-artigos/avaliacao.html" class="ativo">AVALIAÇÃO</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <main class="card">
+                <section id="article-section">
+                    
+                    <h1 id="form-titulo">Nova Avaliação de Qualidade</h1>
+
+                    <div class="article-meta">
+                        <img id="article-image" src="" alt="capa" onerror="this.src='https://placehold.co/100x100?text=Sem+Imagem'">
+                        <div>
+                            <h2 id="article-title">Carregando…</h2>
+                            <div class="small" id="article-author"></div>
+                            <div class="small" id="article-date"></div>
+                            <p class="resumo" id="article-resumo"></p>
+                        </div>
+                        <div class="right">
+                            <div class="nota-badge" id="article-average">—</div>
+                            <div class="small" style="text-align:right">média atual</div>
+                        </div>
+                    </div>
+
+                    <hr class="sep">
+
+                    <article id="article-content" class="small" style="line-height: 1.6;"></article>
+
+                    <hr class="sep">
+
+                    <section id="historico-section" style="margin-bottom: 30px; background: #f9f9f9; padding: 15px; border-radius: 8px;">
+                        <h3 style="margin-bottom: 15px;">Avaliações Anteriores</h3>
+                        <div id="avaliacoes-existentes" class="existing-evals">
+                            <div class="small">Carregando histórico...</div>
+                        </div>
+                    </section>
+
+                    <section id="form-section">
+                        <h3 style="margin:0 0 15px 0; border-bottom: 2px solid #eee; padding-bottom: 10px;">Preencher Avaliação</h3>
+
+                        <form id="form-avaliacao" autocomplete="off">
+                            <input type="hidden" id="id_artigo" value="">
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label for="titulo_artigo">Título do Artigo</label>
+                                <input type="text" id="titulo_artigo" name="titulo_artigo" readonly style="background-color: #eee;">
+                            </div>
+
+                            <div class="row-three">
+                                <div class="flex-1">
+                                    <label for="avaliador">Avaliador</label>
+                                    <select id="avaliador" name="avaliador">
+                                        <option value="">Carregando...</option>
+                                    </select> 
+                                </div>
+                                <div class="w-160">
+                                    <label for="data_avaliacao">Data da Avaliação</label>
+                                    <input type="date" id="data_avaliacao" name="data_avaliacao" required>
+                                </div>
+                                <div class="w-140">
+                                    <label for="status_avaliacao">Status</label>
+                                    <select id="status_avaliacao" name="status_avaliacao">
+                                        <option value="rascunho">Rascunho</option>
+                                        <option value="finalizado">Finalizado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <h2 style="margin-top: 30px; font-size: 1.4rem;">Critérios de Avaliação</h2>
+                            <div id="criterios-container" style="margin-top:12px">
+                            </div>
+
+                            <div class="pont-final-row">
+                                <div>
+                                    <label>Pontuação final (ponderada)</label>
+                                    <div class="nota-badge" id="pontuacao-final-display">0.00</div>
+                                </div>
+                                <div class="small" style="margin-left:auto">Notas: 1 (ruim) – 5 (excelente)</div>
+                            </div>
+
+                            <div style="margin-top:12px">
+                                <label for="comentarios_gerais">Comentários gerais</label>
+                                <textarea id="comentarios_gerais" name="comentarios_gerais" rows="4" placeholder="Comentários e observações finais sobre o artigo..."></textarea>
+                            </div>
+
+                            <div class="actions-row">
+                                <button type="button" id="btn-cancelar-edicao" class="btn-cancel">Cancelar Edição</button>
+                                <button type="button" id="btn-salvar-avaliacao" class="btn-draft">Salvar Rascunho</button>
+                                <button type="button" id="btn-finalizar-enviar" class="btn-publish">Finalizar & Enviar</button>
+                            </div>
+
+                            <div id="mensagem-status" class="status-msg" style="display:none"></div>
+                        </form>
+                    </section>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SafeKids. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="avaliacao.js"></script>
+</body>
+</html>

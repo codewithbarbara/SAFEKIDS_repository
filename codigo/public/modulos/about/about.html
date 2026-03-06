@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | SafeKids</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../viewpsi/css/styles.css">
+
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+        }
+
+        .value-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0c63e4;
+        }
+
+        .menudenavegacao nav a.active {
+            background: rgba(255, 255, 255, 0.25);
+            color: white !important;
+            opacity: 1;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #66cdaa 0%, #4ca786 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .menu-toggle {
+            display: none; 
+            border: none;
+            background: transparent;
+            font-size: 1.8rem;
+            cursor: pointer;
+            margin-left: 8px;
+            color: #66cdaa; 
+            padding: 0;
+            line-height: 1;
+        }
+
+        .menu-toggle:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 767px) {
+            .header-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 16px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .logo {
+                padding: 8px 0;
+            }
+
+            .logo img {
+                height: 80px;
+            }
+
+            .header-user-area {
+                position: static;
+                margin-left: auto;
+                margin-right: 8px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .menudenavegacao {
+                display: none; 
+                position: relative;
+                width: 100%;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            }
+
+            .menudenavegacao.is-open {
+                display: block; 
+            }
+
+            .menudenavegacao nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 16px;
+            }
+
+            .menudenavegacao nav a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="Logo SafeKids">
+                </a>
+            </div>
+
+            <div id="header-user-area" class="header-user-area">
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="menudenavegacao" id="main-nav">
+            <nav>
+                <ul>
+                    <li><a href="../about/about.html" class="active">Sobre</a></li>
+                    <li><a href="../view-all-psicologos/index.html">Psicólogos</a></li>
+                    <li><a href="../apresentacao-de-artigos/index.html">Artigos</a></li>
+                    <li><a href="../forum-conversa/forum.html">Fórum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold text-secondary mb-3">Quem Somos?</h1>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    A SafeKids ajuda famílias a encontrar apoio psicológico infantil com acolhimento, segurança e preço
+                    social.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm value-card text-center p-4">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fa-solid fa-shield-alt fa-3x text-success"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-secondary">Segurança</h3>
+                                <p class="text-muted">Protegemos a privacidade das crianças e oferecemos conteúdo e
+                                    profissionais confiáveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm value-card text-center p-4">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fa-solid fa-handshake fa-3x text-success"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-secondary">Acolhimento</h3>
+                                <p class="text-muted">Atendimento humano e empático, com psicólogos especializados em
+                                    infância.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm value-card text-center p-4">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fa-solid fa-hand-holding-dollar fa-3x text-success"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-secondary">Acessibilidade</h3>
+                                <p class="text-muted">Preços sociais e opções que cabem no bolso das famílias que mais
+                                    precisam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center fw-bold text-secondary mb-5">Perguntas Frequentes</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion shadow-sm" id="faqAccordion">
+                            <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Como escolhemos os psicólogos?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Verificamos CRP, experiência com infância, e pedimos referências. Também
+                                        avaliamos feedbacks de pais.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Quanto custa uma consulta?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Trabalhamos com faixa social, normalmente entre R$40–R$80 para atendimento
+                                        social. Há profissionais com valores variados.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 rounded overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Posso pedir um relatório para escola?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Sim — após autorização dos responsáveis, o psicólogo pode gerar relatórios e
+                                        encaminhamentos quando necessário.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="cta-box text-white rounded-4 p-5 text-center shadow">
+                    <div class="position-relative z-1">
+                        <h3 class="fw-bold mb-3 display-6">Quer encontrar um psicólogo para seu filho?</h3>
+                        <p class="lead mb-4 opacity-75" style="max-width: 600px; margin: 0 auto;">
+                            Nossos profissionais são verificados e especializados no atendimento infantil.
+                            Agende uma consulta com segurança e acolhimento.
+                        </p>
+                        <a href="../view-all-psicologos/index.html"
+                            class="btn btn-light btn-lg rounded-pill fw-bold px-5 text-success shadow-sm">
+                            Ver Psicólogos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light py-4 mt-auto border-top">
+        <div class="container text-center text-muted">
+            <small>© <span id="anoAtual"></span> SafeKids — Todos os direitos reservados.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('is-open');
+            });
+        }
+    </script>
+
+    <script src="about.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil - SafeKids</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Emblem-person-blue.svg" class="logo">
+  </header>
+
+  <main class="conteudo">
+    <div class="card">
+      <h2>Meu Perfil</h2>
+      <form id="formPerfil">
+        <input type="hidden" id="id">
+
+        <label>Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label>CRP:</label>
+        <input type="text" id="crp" required>
+
+        <label>Cidade:</label>
+        <select id="cidade" required>
+          <option value="">Selecione uma cidade</option>
+          <option>São Paulo</option>
+          <option>Rio de Janeiro</option>
+          <option>Curitiba</option>
+        </select>
+
+        <label>Especialidade:</label>
+        <select id="especialidade" required>
+          <option>Ansiedade</option>
+          <option>Depressão</option>
+        </select>
+
+        <label>Biografia:</label>
+        <textarea id="bio" required></textarea>
+
+        <label>Foto (URL):</label>
+        <input type="url" id="foto" required>
+
+        <button type="submit">Salvar Alterações</button>
+      </form>
+
+      <button id="excluirConta" class="excluir">Excluir Conta</button>
+      <button id="sair" class="sair">Sair</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

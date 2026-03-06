@@ -1,0 +1,408 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "2",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuário Teste",
+      "email": "user@abc.com",
+      "foto": ""
+    },
+    {
+      "id": "3",
+      "login": "rommel",
+      "senha": "123",
+      "nome": "Rommel",
+      "email": "rommel@gmail.com"
+    },
+    {
+      "id": "4",
+      "login": "babi",
+      "senha": "1234",
+      "nome": "barbara mota fonseca",
+      "email": "babi@gmail.com"
+    },
+    {
+      "login": "babi2",
+      "senha": "galo2206",
+      "nome": "barbara mota fonseca linda",
+      "email": "barbaramota@gmail.com",
+      "id": "dw_4gud"
+    },
+    {
+      "login": "babi",
+      "senha": "galo2206",
+      "nome": "barbara mota fonseca",
+      "email": "barbaramota@gmail.com",
+      "id": "PEWQDn5"
+    },
+    {
+      "id": "7fd6",
+      "login": "",
+      "senha": "",
+      "nome": "",
+      "email": ""
+    },
+    {
+      "id": "0e7c",
+      "login": "lidifonseca",
+      "senha": "Galo123",
+      "nome": "Lídia Fonseca",
+      "email": "lidifonseca@gmail.com"
+    }
+  ],
+  "horariosDisponiveis": [
+    {
+      "psicologoId": "8f4f",
+      "data": "2025-10-06",
+      "horarios": [
+        "09:00",
+        "11:00",
+        "14:00",
+        "16:00"
+      ],
+      "id": "b475"
+    },
+    {
+      "psicologoId": "c8b3",
+      "data": "2025-10-07",
+      "horarios": [
+        "10:00",
+        "13:00",
+        "15:30"
+      ],
+      "id": "aca4"
+    },
+    {
+      "id": "a7ad",
+      "psicologoId": "8f4f",
+      "data": "2025-12-08",
+      "horarios": [
+        "10:30"
+      ]
+    },
+    {
+      "id": "5c75",
+      "psicologoId": "8f4f",
+      "data": "2025-12-10",
+      "horarios": [
+        "14:30"
+      ]
+    }
+  ],
+  "artigos": [
+    {
+      "id": "1",
+      "titulo": "Como conversar com as crianças sobre o que veem online",
+      "autor": "Psicóloga Ana Souza",
+      "categoria": "",
+      "resumo": "Dicas simples para abordar o tema com sensibilidade e segurança.",
+      "conteudo": "Conversar com as crianças sobre o que elas veem online é essencial para construir um ambiente digital saudável. Os pais devem abordar o tema com calma e empatia, mostrando interesse genuíno pelo que a criança consome e ajudando-a a diferenciar conteúdos adequados e inadequados. O diálogo deve ser constante e sem julgamentos, estimulando a confiança e o senso crítico.",
+      "imagemcapa": "https://serendipitydiplomados.com/wp-content/uploads/2024/09/marzo-terapia-infantil-04.jpg",
+      "datapublicacao": "2025-10-05",
+      "status": "publicado",
+      "avaliacoes": [],
+      "comentarios": []
+    },
+    {
+      "id": "2",
+      "titulo": "O impacto da exposição precoce à tecnologia",
+      "autor": "Neuropsicóloga Carla Mendes",
+      "categoria": "",
+      "resumo": "Como o uso excessivo de telas pode afetar o desenvolvimento infantil.",
+      "conteudo": "A exposição precoce à tecnologia influencia diretamente o comportamento e o desenvolvimento das crianças. O uso excessivo pode comprometer habilidades sociais e cognitivas, interferindo no sono e na concentração. A recomendação é limitar o tempo de tela e incentivar brincadeiras ao ar livre, leitura e atividades criativas.",
+      "imagemcapa": "https://img.freepik.com/fotos-premium/assistente-social-de-mulher-falando-com-a-garota-psicologia-infantil-saude-mental_116407-6422.jpg",
+      "datapublicacao": "2025-09-28",
+      "status": "publicado",
+      "avaliacoes": [
+        5
+      ],
+      "comentarios": []
+    },
+    {
+      "id": "3",
+      "titulo": "Estratégias para pais na era digital",
+      "autor": "Pedagoga Laura Martins",
+      "categoria": "",
+      "resumo": "Ferramentas e atitudes para proteger e educar as crianças na internet.",
+      "conteudo": "A era digital exige dos pais um papel ativo na educação online dos filhos. O uso de ferramentas de controle parental é útil, mas não substitui o diálogo. Ensinar sobre privacidade, segurança e respeito é essencial para preparar crianças conscientes e responsáveis digitalmente.",
+      "imagemcapa": "https://img.freepik.com/fotos-gratis/jovem-femininas-psicologo-sentando-ligado-cadeira-com-area-de-transferencia-e-caneta-sentando-frente-deprimido-menina_23-2148026250.jpg?semt=ais_hybrid&w=740&q=80",
+      "datapublicacao": "2025-09-15",
+      "status": "publicado",
+      "avaliacoes": [],
+      "comentarios": []
+    },
+    {
+      "id": "4",
+      "titulo": "Meu filho viu conteúdo impróprio online: e agora?",
+      "autor": "Equipe Editorial — Plataforma SafeKids",
+      "categoria": "Parentalidade",
+      "resumo": "Quando uma criança vê pornografia sem querer, muitos pais entram em pânico, mas não precisa ser um caos. Com calma, diálogo e a orientação certa, dá pra transformar o susto em uma conversa segura e num aprendizado importante sobre limites e proteção online.",
+      "conteudo": "A primeira reação de muitos pais é o desespero — mas, na verdade, a melhor coisa a se fazer é respirar fundo. A maior parte das crianças não entende completamente o que viu, e transformar isso em uma conversa segura evita culpa, vergonha e medo.\n\nFalar com calma, sem broncas, ajuda a criança a entender que esses conteúdos não são feitos para ela, que podem confundir e que existem formas saudáveis de lidar com curiosidade. Perguntas abertas (“Como você se sentiu quando viu aquilo?”) permitem que ela conte o que realmente aconteceu.\n\nAlém da conversa, vale reforçar limites digitais e ajustar a tecnologia: filtros, supervisão e criação de ambientes seguros reduzem bastante o risco de exposição repetida. O mais importante é criar um vínculo onde a criança se sinta protegida para falar sempre que algo estranho surgir online.",
+      "imagemcapa": "https://cdn.pixabay.com/photo/2021/09/07/11/27/hands-6603660_1280.jpg",
+      "datapublicacao": "2025-11-17",
+      "status": "publicado",
+      "avaliacoes": [
+        5
+      ],
+      "comentarios": []
+    },
+    {
+      "id": "5",
+      "titulo": "A Rotina Digital Ideal para Crianças de 6 a 12 Anos",
+      "autor": "Mariana Freire - Psicopedagoga",
+      "categoria": "Parentalidade",
+      "resumo": "Como equilibrar telas, estudo, brincadeira e descanso em um mundo onde tudo disputa a atenção das crianças.",
+      "conteudo": "A infância moderna virou um território multitarefa. Enquanto a geração dos pais cresceu com TV aberta, os pequenos de hoje convivem com tablets, YouTube, jogos online, redes sociais e até Inteligência Artificial. Esse cenário não é necessariamente ruim, mas exige planejamento na rotina.\n\nUma rotina digital saudável para crianças de 6 a 12 anos precisa ter três pilares: uso consciente, variedade de atividades e participação ativa dos pais. Isso inclui definir horários fixos para dispositivos, oferecer alternativas offline (como leitura, atividades ao ar livre, esportes) e acompanhar de perto o tipo de conteúdo consumido.\n\nEstudos mostram que crianças que seguem uma rotina digital organizada tendem a ter melhor desempenho escolar, menos irritabilidade e maior foco. Não se trata de demonizar a tecnologia, e sim de ensinar a usá-la como aliada.\n\nAo final, lembre-se: o que molda o comportamento não é a tela em si, mas a qualidade da mediação parental.",
+      "imagemcapa": "https://images.pexels.com/photos/6965385/pexels-photo-6965385.jpeg",
+      "datapublicacao": "2025-11-17",
+      "status": "publicado"
+    }
+  ],
+  "psicologos": [
+    {
+      "nome": "Maria Azevedo",
+      "email": "mariaazevedo@gmail.com",
+      "senha": "123456",
+      "crp": "123456",
+      "cidade": "São Paulo",
+      "bio": "Sou Maria Azevedo, psicóloga dedicada à saúde emocional e ao desenvolvimento familiar. Sou especialista em Terapia Infantil, utilizando abordagens lúdicas e eficazes para ajudar crianças a expressarem suas emoções e a superarem desafios comportamentais e emocionais, como ansiedade, medos e dificuldades de socialização. ",
+      "foto": "https://thispersonnotexist.org/downloadimage/Ac3RhdGljL3dvbWFuL3NlZWQzNTgxNy5qcGVn",
+      "valorConsulta": 80,
+      "tipoAtendimento": "Online",
+      "aceitaConvenios": true,
+      "formacao": [
+        "Graduação em Psicologia",
+        "Mestrado em TCC"
+      ],
+      "especialidades": [
+        {
+          "nome": "Terapia Infantil"
+        },
+        {
+          "nome": "Orientação Familiar"
+        }
+      ],
+      "especialidade": "",
+      "id": "8f4f"
+    },
+    {
+      "id": "8ed9",
+      "nome": "Francisco Teixeira",
+      "email": "franciscoteixeira@gmal.com",
+      "senha": "12345678",
+      "crp": "1233334",
+      "cidade": "Belo Horizonte",
+      "bio": "Especialista em desenvolvimento infantil. Acolhimento para crianças e orientação aos pais para fortalecer vínculos e a saúde emocional.",
+      "foto": "https://thispersonnotexist.org/downloadimage/Ac3RhdGljL21hbi9zZWVkNTg0Ni5qcGVn",
+      "valorConsulta": 130,
+      "tipoAtendimento": "Ambos",
+      "aceitaConvenios": true,
+      "formacao": [
+        "Graduação em Psicologia",
+        "Mestrado em Psicanálise"
+      ],
+      "especialidades": [
+        {
+          "nome": "Orientação Familiar"
+        },
+        {
+          "nome": "Terapia Infantil"
+        }
+      ],
+      "especialidade": ""
+    },
+    {
+      "id": "8f03",
+      "nome": "Rafael Monteiro Azevedo",
+      "email": "rafael.azevedo.psico@example.com",
+      "senha": "monteiro123",
+      "crp": "04/56789",
+      "cidade": "Belo Horizonte",
+      "bio": "Sou psicólogo clínico com foco em crianças e adolescentes. Trabalho principalmente com técnicas baseadas em evidências, ajudando famílias a lidar com desafios do dia a dia, incluindo uso de tecnologia, comportamentos desregulados e construção de rotinas saudáveis. Meu objetivo é oferecer um espaço acolhedor, leve e acessível para que pais e filhos se sintam seguros para conversar e evoluir juntos.",
+      "foto": "https://img.freepik.com/fotos-gratis/homem-de-tiro-medio-sentado-dentro-de-casa_23-2149927612.jpg?semt=ais_hybrid&w=740&q=80",
+      "valorConsulta": 65,
+      "tipoAtendimento": "Online",
+      "aceitaConvenios": false,
+      "formacao": [
+        "Graduação em Psicologia pela UFMG",
+        "Pós-graduação em Psicologia Infantil",
+        "Especialização em Terapias Contextuais"
+      ],
+      "especialidades": [
+        {
+          "nome": "Ansiedade"
+        },
+        {
+          "nome": "Desenvolvimento Infantil"
+        },
+        {
+          "nome": "Orientação para Pais"
+        },
+        {
+          "nome": "Gestão Emocional"
+        }
+      ],
+      "especialidade": ""
+    },
+    {
+      "id": "c8b3",
+      "nome": "Luísa Miranda",
+      "email": "luisamiranda@gmail.com",
+      "senha": "luisa123",
+      "crp": "03/030303",
+      "cidade": "São Paulo",
+      "bio": "Me chamo Luísa e meu consultório é um espaço seguro e livre de julgamentos. Atuo ajudando adolescentes a navegarem pelos desafios dessa fase, como construção de identidade, pressão nos estudos e autoestima.",
+      "foto": "https://thispersonnotexist.org/downloadimage/Ac3RhdGljL3dvbWFuL3NlZWQxODM0Ny5qcGVn",
+      "valorConsulta": 90,
+      "tipoAtendimento": "Online",
+      "aceitaConvenios": true,
+      "formacao": [
+        "Graduação em Psicologia",
+        "Mestrado em TCC"
+      ],
+      "especialidades": [
+        {
+          "nome": "Depressão infantil"
+        }
+      ],
+      "especialidade": ""
+    },
+    {
+      "id": "3930",
+      "nome": "Gabriela Rodrigues",
+      "crp": "08/54822",
+      "email": "gabrielarodrigues@gmail.com",
+      "senha": "Galo123",
+      "cidade": "Belo Horizonte",
+      "valor": 65,
+      "tipo": "Ambos",
+      "convenios": true,
+      "formacao": "Graduação em Psicologia pela UFMG, Pós-graduação em Psicologia Infantil, Especialização em Terapias Contextuais",
+      "especialidades": "Desenvolvimento Infantil, Orientação para Pais, Gestão Emocional",
+      "bio": "sou foda",
+      "foto": "https://draligiatorres.com.br/wp-content/uploads/2023/10/draligiatorresmobile.jpg"
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": "1",
+      "psicologoId": "8f4f",
+      "nota": 5,
+      "pontosPositivos": [
+        "Atenciosa",
+        "Pontual"
+      ],
+      "comentarios": "A Dra. Maria é excelente! Minha filha adorou.",
+      "nome": "Ana Paula",
+      "data": "2025-10-01"
+    },
+    {
+      "id": "2",
+      "psicologoId": "8f4f",
+      "nota": 4,
+      "pontosPositivos": [
+        "Ambiente Acolhedor"
+      ],
+      "comentarios": "Muito boa profissional.",
+      "nome": "Carlos",
+      "data": "2025-09-28"
+    },
+    {
+      "id": "3",
+      "psicologoId": "8ed9",
+      "nota": 5,
+      "pontosPositivos": [
+        "Experiente",
+        "Didático"
+      ],
+      "comentarios": "O Dr. Francisco ajudou muito meu filho com a ansiedade.",
+      "nome": "Fernanda",
+      "data": "2025-10-05"
+    },
+    {
+      "id": "4",
+      "psicologoId": "8f03",
+      "nota": 5,
+      "pontosPositivos": [
+        "Empático",
+        "Divertido"
+      ],
+      "comentarios": "O Rafael é ótimo com adolescentes. Recomendo!",
+      "nome": "Roberto",
+      "data": "2025-10-02"
+    },
+    {
+      "id": "97a9",
+      "psicologoId": "8f4f",
+      "nota": 5,
+      "pontosPositivos": [
+        "Comunicação clara",
+        "Pontualidade",
+        "Preço justo"
+      ],
+      "comentarios": "",
+      "nome": "Usuário Avaliador",
+      "data": "2025-12-04"
+    },
+    {
+      "id": "04a2",
+      "psicologoId": "8ed9",
+      "nota": 4,
+      "pontosPositivos": [
+        "Comunicação clara",
+        "Acolhimento"
+      ],
+      "comentarios": "",
+      "nome": "Usuário Avaliador",
+      "data": "2025-12-04"
+    },
+    {
+      "id": "3f5c",
+      "psicologoId": "8f4f",
+      "nota": 5,
+      "pontosPositivos": [
+        "Pontualidade"
+      ],
+      "comentarios": "",
+      "nome": "Usuário Avaliador",
+      "data": "2025-12-04"
+    },
+    {
+      "id": "4045",
+      "psicologoId": "c8b3",
+      "nota": 5,
+      "pontosPositivos": [],
+      "comentarios": "",
+      "nome": "Usuário Avaliador",
+      "data": "2025-12-06"
+    },
+    {
+      "id": "4e63",
+      "psicologoId": "c8b3",
+      "nota": 5,
+      "pontosPositivos": [
+        "Pontualidade"
+      ],
+      "comentarios": "",
+      "nome": "Usuário Avaliador",
+      "data": "2025-12-06"
+    }
+  ],
+  "posts": [
+    {
+      "id": "f9d7",
+      "title": "Meu filho assiste pornografia",
+      "body": "Estou muito preocupada meu filho ta assistindo pornografia"
+    }
+  ],
+  "agendamentos": [],
+  "comentarios": []
+}

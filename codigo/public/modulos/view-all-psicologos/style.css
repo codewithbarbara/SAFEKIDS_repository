@@ -1,0 +1,20 @@
+/* 
+   Most styles are now handled by Bootstrap and the shared ../viewpsi/css/styles.css 
+   This file contains only specific overrides for the View All page.
+*/
+
+.hover-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+/* Active Nav Link Override for this page */
+.menudenavegacao nav a.active {
+	background: rgba(255, 255, 255, 0.25);
+	color: white !important;
+	opacity: 1;
+}

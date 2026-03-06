@@ -1,0 +1,264 @@
+body {
+  font-family: 'Lexend', sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.linha-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  background: #d7f2e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 5px 0px 0;
+}
+
+.logo {
+  display: block;
+}
+
+header > logo {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header > logo img {
+  display: block;
+  height: 150px;
+  margin: 0;
+}
+
+header img.logo {
+  display: block;
+  height: 96px;
+  width: auto;
+  margin: 10px 0;
+}
+
+.menudenavegacao {
+  width: 100%;
+  margin-top: 10px;
+  background: #66cdaa;
+  border-top: 1px solid #e8efec;
+  border-bottom: 1px solid #e8eaef;
+}
+
+.menudenavegacao nav ul {
+  background: #66cdaa;
+  border-top: 1px solid #e8efec;
+  border-bottom: 1px solid #e8eaef;
+  list-style: none;
+  margin: 0;
+  padding: 8px 300px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center
+}
+
+.menudenavegacao nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 0;
+  display: inline-block;
+}
+
+.menudenavegacao nav .ativo {
+  border-bottom: 2px solid #66cdaa;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background-color: #fcfcfc;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h1 {
+  font-size: 1.8rem;
+  color: #222;
+  border-bottom: 2px solid #66cdaa;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #bbb; 
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: #4c7b65;
+  box-shadow: 0 0 5px rgba(76, 123, 101, 0.4);
+  outline: none;
+}
+
+.form-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  flex-wrap: wrap; 
+}
+
+.form-actions button {
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.btn-draft {
+  background-color: #6c757d;
+}
+
+.btn-draft:hover {
+  background-color: #5a6268;
+}
+
+.btn-publish {
+  background-color: #66cdaa; 
+}
+
+.btn-publish:hover {
+  background-color: #4c7b65;
+}
+
+#mensagem-status {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+@media (max-width: 992px) {
+  header > logo img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-top: 8px;
+  }
+
+  header > logo img {
+    height: 96px;
+  }
+
+  .form-container {
+    margin: 24px auto 32px;
+    padding: 20px 16px;
+  }
+  
+  .form-container h1 {
+    font-size: 1.4rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-actions button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  header > logo img {
+    height: 84px;
+  }
+}
+
+.sk-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.sk-modal {
+  width: 92%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  font-family: inherit;
+}
+.sk-modal h3 {
+  margin: 0 0 .6rem 0;
+  font-size: 1.05rem;
+}
+.sk-modal p {
+  margin: 0 0 1rem 0;
+  color: #444;
+}
+.sk-modal .sk-actions {
+  display:flex;
+  gap: .6rem;
+  justify-content: flex-end;
+}
+.sk-modal .sk-btn {
+  padding: .5rem .85rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight:600;
+}
+.sk-btn-primary { background:#10b981; color:#fff; }
+.sk-btn-ghost { background: #f3f4f6; color:#111; }
+.sk-btn-danger { background:#ef4444; color:#fff; margin-right:auto; }
