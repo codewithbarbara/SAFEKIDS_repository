@@ -1,0 +1,30 @@
+cff-version: 1.0.1
+message: Por favor, cite este software usando os metadados abaixo.
+title: SafeKids
+authors:
+  - family-names: Mota
+    given-names: Bárbara
+  - family-names: Cohen
+    given-names: Ilan
+  - family-names: Duarte
+    given-names: Rafael
+  - family-names: Silveira
+    given-names: Rafaela
+  - family-names: Vertelo
+    given-names: Yasmin
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Silva Tavares
+    given-names: Cleiton
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
+keywords:
+  - segurança infantil
+  - proteção online
+  - prevenção pornografia
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2025-2-ti1-5538100-safe-kids.git
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2025-12-10
